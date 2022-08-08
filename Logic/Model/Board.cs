@@ -15,10 +15,11 @@ class Board
         }
     }
 
-    public void PlaceTile(Tile tile, int x, int y)
+    public void PlaceTile(Tile tile, Direction direction, int x, int y)
     {
         if (fields[x][y] != null) throw new ArgumentException("The specified field on the board is already occupied");
         fields[x][y] = tile;
+        tile.Place(direction);
 
         if (x - 1 >= 0) fields[x - 1][y].ConnectTo(tile, UP);
         if (x + 1 < fields.Length) fields[x + 1][y].ConnectTo(tile, DOWN);

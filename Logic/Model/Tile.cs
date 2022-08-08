@@ -43,6 +43,11 @@ class Tile
         return idsInDirection;
     }
 
+    public void Place(Direction direction)
+    {
+        facing = direction;
+    }
+
     public void ConnectTo(Tile tile, Direction direction)
     {
         var endpointsToConnect = EndpointsInDirection(direction);

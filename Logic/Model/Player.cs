@@ -17,11 +17,11 @@ class Player
         tiles = new List<Tile>();
     }
 
-    public void PlaceTile(int tileId, int boardX, int boardY)
+    public void PlaceTile(int tileId, Direction direction, int boardX, int boardY)
     {
         var tile = tiles.Find(tile => tile.id == tileId);
         if (tile == null) throw new ArgumentException("The specified tile id is not in the players hand");
-        board.PlaceTile(tile, boardX, boardY);
+        board.PlaceTile(tile, direction, boardX, boardY);
         tiles.Remove(tile);
     }
 }
