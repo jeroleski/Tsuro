@@ -2,7 +2,7 @@ namespace Model;
 
 using static Model.Direction;
 
-class Board
+public class Board
 {
     public Tile[][] fields { get; }
 

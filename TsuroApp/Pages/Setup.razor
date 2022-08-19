@@ -1,0 +1,57 @@
+@page "/setup"
+@using Main
+@using Model
+@inject StateContainor state
+
+<h1>Setup the game of Tsuro</h1>
+
+
+<EditForm>
+    <h3>Edit Employee</h3>
+    <hr />
+    <div class="form-group row">
+        <label for="firstName" class="col-sm-2 col-form-label">
+            Select a tile set
+        </label>
+        <div class="col-sm-10">
+            <InputText id="firstName" class="form-control" placeholder="Path to the set of tiles to be used"
+                @bind-Value="tilePath">
+                ../../../Logic/TileConnections/originalTiles.txt
+            </InputText>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">
+            How many players?
+        </label>
+        <div class="col-sm-10">
+            <InputSelect id="department" @bind-Value="nPlayers" class="form-control">
+                @foreach (var nPlayer in possibleNPlayers)
+                {
+                    <option value="@nPlayer">@nPlayer players</option>
+                }
+            </InputSelect>
+        </div>
+    </div>
+</EditForm>
+
+
+<button @onclick="SetupGame">Begin</button>
+
+
+@code
+{
+    private int[] possibleNPlayers = new int[]
+    {
+        1, 2, 3, 4, 5, 6, 7, 8
+    };
+    private int nPlayers = 2;
+
+    string tilePath = "";
+
+    public void SetupGame() {
+        Tsuro tsuro = new ModelBuilder().LoadGame(tilePath, nPlayers);
+        state.property = tsuro;
+    }
+    
+}

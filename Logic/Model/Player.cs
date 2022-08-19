@@ -1,6 +1,6 @@
 namespace Model;
 
-class Player
+public class Player
 {
     public readonly int id;
 

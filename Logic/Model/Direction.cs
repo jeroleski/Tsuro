@@ -1,6 +1,6 @@
 namespace Model;
 
-enum Direction
+public enum Direction
 {
     UP,
     RIGHT,

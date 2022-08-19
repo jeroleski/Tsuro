@@ -4,7 +4,7 @@ using Model;
 using System.IO;
 using System.Text.RegularExpressions;
 
-class ModelBuilder
+public class ModelBuilder
 {
     public Tsuro LoadGame(string path, int nPlayers)
     {

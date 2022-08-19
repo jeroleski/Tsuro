@@ -1,6 +1,6 @@
 namespace Model;
 
-class Tsuro
+public class Tsuro
 {
     Board board { get; }
     List<Tile> tiles { get; }

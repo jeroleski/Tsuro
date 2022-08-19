@@ -1,6 +1,6 @@
 namespace Model;
 
-class Pawn
+public class Pawn
 {
     public readonly int id;
 

@@ -1,6 +1,6 @@
 namespace Model;
 
-class Tile
+public class Tile
 {
     public static (Direction, int)[] endpointIdToDirection { get; set; } = new (Direction, int)[0];
 
@@ -68,7 +68,7 @@ class Tile
     }
 }
 
-class Path
+public class Path
 {
     //TODO: make sure that alfa and beta consistently is the high or low id
 
